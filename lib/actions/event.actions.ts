@@ -18,11 +18,6 @@ export const getSimilarEventsBySlug = async (slug: string) => {
       tags: { $in: event.tags }
     }).lean()
 
-    console.log(similarEvents)
-    console.log("slug:", slug)
-    console.log("event:", event)
-    console.log("tags:", event?.tags)
-
     return JSON.parse(JSON.stringify(similarEvents))
   } catch (error) {
     console.log(error)
