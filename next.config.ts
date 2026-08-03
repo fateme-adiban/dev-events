@@ -1,7 +1,23 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  cacheComponents: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com"
+      },
+      {
+        protocol: "https",
+        hostname: "encrypted-tbn0.gstatic.com"
+      },
+      {
+        protocol: "https",
+        hostname: "**"
+      }
+    ]
+  }
+}
 
-export default nextConfig;
+export default nextConfig
